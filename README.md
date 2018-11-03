@@ -1,4 +1,4 @@
-## Computabilidad y Algoritmia
+# Computabilidad y Algoritmia
 
-# Prácticas
+## Prácticas
 
