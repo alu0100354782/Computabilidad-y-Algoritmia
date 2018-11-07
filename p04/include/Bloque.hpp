@@ -4,13 +4,18 @@
 class Bloque {
 
     private:
-        int _size;
+        int _ancho;
+        int _alto = 1;
 
     public:
-        Bloque(const int& size);
+        Bloque();
+        Bloque(const Bloque& bloque);
+        Bloque(const int& ancho);
         ~Bloque();
         
-        const int& getSize();
+        const int& getAncho();
+
+        bool operator==(const Bloque &bloque);
 
     friend std::ostream& operator<< (std::ostream& os, Bloque &bloque);
 };

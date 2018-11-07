@@ -1,19 +1,29 @@
 #include "../include/Bloque.hpp"
 
-Bloque::Bloque(const int& size) {
-    _size = size;
+Bloque::Bloque() { }
+
+Bloque::Bloque(const Bloque& bloque) {
+    *this = bloque;
+}
+
+Bloque::Bloque(const int& ancho) {
+    _ancho = ancho;
 }
 
 Bloque::~Bloque() { }
 
-const int& Bloque::getSize() {
-    return _size;
+const int& Bloque::getAncho() {
+    return _ancho;
+}
+
+bool Bloque::operator==(const Bloque &bloque) {
+    return _ancho == bloque._alto;
 }
 
 std::ostream& operator<< (std::ostream& os, Bloque &bloque) {
-    if (bloque._size == 2)
+    if (bloque._ancho == 2)
         os << "|xx";
-    if (bloque._size == 3)
+    if (bloque._ancho == 3)
         os << "|xxx";
     
     return os;

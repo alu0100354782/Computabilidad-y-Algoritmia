@@ -7,16 +7,24 @@ class Muro {
 
     private:
         std::vector<Fila> _filas;
-        int _largo;
         int _ancho;
+        int _alto;        
+
+        std::vector<Fila> _fposibles;   // combinaciones de filas posibles        
+        
 
     public:
-        Muro();
+        Muro(const int &ancho, const int &alto);
+        Muro(const Muro &muro);
         ~Muro();
 
-        void setDimension(const int &largo, const int &ancho);
+        void setDimension(const int &ancho, const int &alto);
         void setFila(const Fila &fila);
         const Fila& getFila(const int &i);
+
+        void generarFilas(Fila& fila, int &ancho_actual);
+
+        void comprobar();
 
     friend std::ostream& operator<< (std::ostream& os, Muro &muro);
 };

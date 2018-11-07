@@ -1,5 +1,5 @@
 CC = g++ 
-CXXFLAGS = -g -std=c++11
+CXXFLAGS = -g -Wfatal-errors -std=c++11
 SRC = ../src/
 
 OBJS = $(SRC)Bloque.o $(SRC)Fila.o $(SRC)Muro.o $(SRC)Main.o
