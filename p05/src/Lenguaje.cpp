@@ -137,6 +137,23 @@ const bool Lenguaje::operator == (const Lenguaje& lenguaje) {
     return _cadenas == lenguaje._cadenas;
 }
 
+const Lenguaje Lenguaje::potencia(const int& exponente) {
+    Lenguaje resultado = *this;
+    resultado.set_id(_id + 1);
+    
+    if (exponente == 0) resultado = Lenguaje("");
+    
+    if (exponente == 1) resultado = *this;
+
+    if (exponente > 1) {
+        for (int i = 2; i <= exponente; i++) {
+            resultado = resultado * resultado;
+        }
+    }    
+
+    return resultado;
+}
+
 std::ostream& operator << (std::ostream& os, const Lenguaje& lenguaje) {        
     os << "L" << lenguaje._id << " = {";
     if(!lenguaje._vacio) {

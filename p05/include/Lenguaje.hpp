@@ -18,7 +18,7 @@ class Lenguaje {
 
     public:        
         Lenguaje();
-        Lenguaje(const int id);
+        Lenguaje(const int);
         Lenguaje(const Lenguaje&);
         Lenguaje(std::string);
         virtual ~Lenguaje();
@@ -34,6 +34,7 @@ class Lenguaje {
         const Lenguaje operator- (const Lenguaje&);
         const bool sublenguaje(const Lenguaje&);
         const bool operator == (const Lenguaje&);
+        const Lenguaje potencia(const int&);
 
     friend std::ostream& operator << (std::ostream&, const Lenguaje&);
 };

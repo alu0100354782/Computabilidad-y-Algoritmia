@@ -83,6 +83,16 @@ int main() {
             else
                 cout << " != L";
             cout << l1.get_id() << endl; 
+
+        case 8: 
+            inicializar(l1);
+            cout << "introduzca exponente:";
+            int exponente = 0;
+            cin >> exponente;
+            l2 = l1.potencia(exponente);
+            cout << "L" << l1.get_id() << "^" << exponente 
+                << " = " << l2 << endl;                
+            break;
     }
 
     return 0;
