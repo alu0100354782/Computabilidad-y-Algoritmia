@@ -2,9 +2,15 @@
 
 void Menu::mostrar() {
     std::cout << std::endl << std::endl;
-    std::cout << "**************************************************" << std::endl;
-    std::cout << "|Práctica #02: Calculadora para lenguajes finitos|" << std::endl;
-    std::cout << "**************************************************" << std::endl << std::endl;
+    std::cout << "****************************************************" << std::endl;
+    std::cout << "|                                                  |" << std::endl;
+    std::cout << "| COMPUTABILIDAD Y ALGORITMIA                      |" << std::endl;
+    std::cout << "|                                                  |" << std::endl;
+    std::cout << "| Sergio Reyes de León                             |" << std::endl;
+    std::cout << "|                                                  |" << std::endl;
+    std::cout << "| Práctica #05: Calculadora para lenguajes finitos |" << std::endl;
+    std::cout << "|                                                  |" << std::endl;
+    std::cout << "****************************************************" << std::endl << std::endl;
     std::cout << "\t 1.  Inversa" << std::endl;
     std::cout << "\t 2.  Concatenación" << std::endl;
     std::cout << "\t 3.  Unión" << std::endl;
