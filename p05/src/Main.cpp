@@ -46,6 +46,13 @@ int main() {
                 << l2.get_id() << " = " << l3 << endl;                
             break;
 
+        case 4: 
+            inicializar(l1);
+            inicializar(l2);
+            l3 = l1.interseccion(l2);
+            cout << "L" << l1.get_id() << " ∩ " << "L" 
+                << l2.get_id() << " = " << l3 << endl;                
+            break;
     }
 
     return 0;

@@ -16,7 +16,7 @@ class Lenguaje {
         std::set<std::string> _cadenas;
         bool _vacio;
 
-    public:
+    public:        
         Lenguaje();
         Lenguaje(const int id);
         Lenguaje(const Lenguaje&);
@@ -30,6 +30,7 @@ class Lenguaje {
         const Lenguaje inversa();
         const Lenguaje operator* (const Lenguaje&);
         const Lenguaje lunion(const Lenguaje&);
+        const Lenguaje interseccion(const Lenguaje&);
 
     friend std::ostream& operator << (std::ostream&, const Lenguaje&);
 };

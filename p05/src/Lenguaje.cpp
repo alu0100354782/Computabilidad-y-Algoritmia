@@ -92,10 +92,27 @@ const Lenguaje Lenguaje::operator* (const Lenguaje& lenguaje) {
 }
 
 const Lenguaje Lenguaje::lunion(const Lenguaje& lenguaje) {
-    Lenguaje resultado = *this;
-    resultado.set_id(lenguaje._id + 1);
-    resultado._cadenas.insert(lenguaje._cadenas.begin(), lenguaje._cadenas.end());
+    
+    Lenguaje resultado(lenguaje._id + 1);
+    std::set<std::string> lunion;
+    
 
+    set_union(_cadenas.begin(), _cadenas.end(), 
+                    lenguaje._cadenas.begin(), lenguaje._cadenas.end(),
+                    std::inserter(lunion, lunion.begin()));
+    resultado._cadenas = lunion;
+
+    return resultado;
+}
+
+const Lenguaje Lenguaje::interseccion(const Lenguaje& lenguaje) {
+    Lenguaje resultado(lenguaje._id + 1);
+    std::set<std::string> interseccion;
+    
+    set_intersection(_cadenas.begin(), _cadenas.end(), 
+                    lenguaje._cadenas.begin(), lenguaje._cadenas.end(),
+                    std::inserter(interseccion, interseccion.begin()));
+    resultado._cadenas = interseccion;
     return resultado;
 }
 
