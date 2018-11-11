@@ -91,6 +91,14 @@ const Lenguaje Lenguaje::operator* (const Lenguaje& lenguaje) {
     return resultado;
 }
 
+const Lenguaje Lenguaje::lunion(const Lenguaje& lenguaje) {
+    Lenguaje resultado = *this;
+    resultado.set_id(lenguaje._id + 1);
+    resultado._cadenas.insert(lenguaje._cadenas.begin(), lenguaje._cadenas.end());
+
+    return resultado;
+}
+
 std::ostream& operator << (std::ostream& os, const Lenguaje& lenguaje) {        
     os << "L" << lenguaje._id << " = {";
     if(!lenguaje._vacio) {

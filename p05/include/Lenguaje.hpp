@@ -29,7 +29,7 @@ class Lenguaje {
         void definir(std::string&);
         const Lenguaje inversa();
         const Lenguaje operator* (const Lenguaje&);
-        
+        const Lenguaje lunion(const Lenguaje&);
 
     friend std::ostream& operator << (std::ostream&, const Lenguaje&);
 };
