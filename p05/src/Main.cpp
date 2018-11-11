@@ -84,7 +84,7 @@ int main() {
                 cout << " != L";
             cout << l1.get_id() << endl; 
 
-        case 8: 
+        case 8: {
             inicializar(l1);
             cout << "introduzca exponente:";
             int exponente = 0;
@@ -93,6 +93,16 @@ int main() {
             cout << "L" << l1.get_id() << "^" << exponente 
                 << " = " << l2 << endl;                
             break;
+        }
+        case 9: 
+            inicializar(l1);
+            l2 = l1.kleene();
+            cout << "L" << l1.get_id() << "* = " << l2 << endl;                
+            break;
+        
+        default:
+            break;
+        
     }
 
     return 0;

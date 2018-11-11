@@ -154,6 +154,21 @@ const Lenguaje Lenguaje::potencia(const int& exponente) {
     return resultado;
 }
 
+const Lenguaje Lenguaje::kleene() {
+    Lenguaje resultado = *this;
+    resultado.set_id(_id + 1);
+    resultado.insertar_cadena(CADENA_VACIA);
+    
+    // CIERRE DE KLEENE INFINITO
+    // resultado = resultado.potencia(std::numeric_limits<int>::max());
+    
+    // CIERRE DE KLEENE LIMITADO
+    resultado = resultado.potencia(5);
+    resultado.insertar_cadena("...");    
+
+    return resultado;
+}
+
 std::ostream& operator << (std::ostream& os, const Lenguaje& lenguaje) {        
     os << "L" << lenguaje._id << " = {";
     if(!lenguaje._vacio) {
