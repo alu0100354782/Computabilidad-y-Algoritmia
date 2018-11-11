@@ -116,6 +116,17 @@ const Lenguaje Lenguaje::interseccion(const Lenguaje& lenguaje) {
     return resultado;
 }
 
+const Lenguaje Lenguaje::operator- (const Lenguaje& lenguaje) {
+    Lenguaje resultado(lenguaje._id + 1);
+    std::set<std::string> diferencia;
+    
+    set_difference(_cadenas.begin(), _cadenas.end(), 
+                    lenguaje._cadenas.begin(), lenguaje._cadenas.end(),
+                    std::inserter(diferencia, diferencia.begin()));
+    resultado._cadenas = diferencia;
+    return resultado;
+}
+
 std::ostream& operator << (std::ostream& os, const Lenguaje& lenguaje) {        
     os << "L" << lenguaje._id << " = {";
     if(!lenguaje._vacio) {

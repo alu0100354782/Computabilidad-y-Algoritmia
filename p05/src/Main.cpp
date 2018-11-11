@@ -53,6 +53,14 @@ int main() {
             cout << "L" << l1.get_id() << " ∩ " << "L" 
                 << l2.get_id() << " = " << l3 << endl;                
             break;
+
+        case 5: 
+            inicializar(l1);
+            inicializar(l2);
+            l3 = l1 - l2;
+            cout << "L" << l1.get_id() << " - " << "L" 
+                << l2.get_id() << " = " << l3 << endl;                
+            break;
     }
 
     return 0;

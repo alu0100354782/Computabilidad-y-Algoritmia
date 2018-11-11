@@ -31,6 +31,7 @@ class Lenguaje {
         const Lenguaje operator* (const Lenguaje&);
         const Lenguaje lunion(const Lenguaje&);
         const Lenguaje interseccion(const Lenguaje&);
+        const Lenguaje operator- (const Lenguaje&);
 
     friend std::ostream& operator << (std::ostream&, const Lenguaje&);
 };
