@@ -73,6 +73,16 @@ int main() {
             cout << l1.get_id() << endl; 
             
             break;
+        
+        case 7: 
+            inicializar(l1);
+            inicializar(l2);
+            cout << "L" << l2.get_id();
+            if(l1 == l2)
+                cout << " = L";
+            else
+                cout << " != L";
+            cout << l1.get_id() << endl; 
     }
 
     return 0;

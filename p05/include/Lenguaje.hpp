@@ -33,7 +33,7 @@ class Lenguaje {
         const Lenguaje interseccion(const Lenguaje&);
         const Lenguaje operator- (const Lenguaje&);
         const bool sublenguaje(const Lenguaje&);
-        
+        const bool operator == (const Lenguaje&);
 
     friend std::ostream& operator << (std::ostream&, const Lenguaje&);
 };
