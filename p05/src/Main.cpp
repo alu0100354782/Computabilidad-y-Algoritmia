@@ -61,6 +61,18 @@ int main() {
             cout << "L" << l1.get_id() << " - " << "L" 
                 << l2.get_id() << " = " << l3 << endl;                
             break;
+
+        case 6: 
+            inicializar(l1);
+            inicializar(l2);
+            cout << "L" << l2.get_id();
+            if(l1.sublenguaje(l2))
+                cout << " es sublenguaje de L";
+            else
+                cout << " NO es sublenguaje en L";
+            cout << l1.get_id() << endl; 
+            
+            break;
     }
 
     return 0;

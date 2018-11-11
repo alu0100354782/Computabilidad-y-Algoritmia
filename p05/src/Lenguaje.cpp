@@ -127,6 +127,13 @@ const Lenguaje Lenguaje::operator- (const Lenguaje& lenguaje) {
     return resultado;
 }
 
+const bool Lenguaje::sublenguaje(const Lenguaje& lenguaje) {
+    Lenguaje resultado(lenguaje._id + 1);
+    resultado = *this - lenguaje;
+    return (*this - resultado)._cadenas.size() == lenguaje._cadenas.size();
+}
+
+
 std::ostream& operator << (std::ostream& os, const Lenguaje& lenguaje) {        
     os << "L" << lenguaje._id << " = {";
     if(!lenguaje._vacio) {
