@@ -36,7 +36,8 @@ void Lenguaje::insertar_cadena(const std::string& cadena) {
     _cadenas.insert(cadena);
 }
 
-void Lenguaje::definir(std::string& lenguaje) {    
+void Lenguaje::definir(std::string& lenguaje) {  
+    
     if(lenguaje == "{}")
         _vacio = true;
     else {
@@ -44,7 +45,8 @@ void Lenguaje::definir(std::string& lenguaje) {
         std::string str = "";
         int i = 0;
         for(char c: lenguaje) {
-            if(c != '{' && c != ',') {
+            
+            if(c != '{' && c != ',' && c != ' ') {
                 str += c;
                 
                 if (c == '}'){

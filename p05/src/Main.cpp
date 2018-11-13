@@ -8,7 +8,7 @@ void inicializar(Lenguaje& l) {
     cout << "L" << l.get_id() << " = ";
     string str = "";
     cin >> str;
-    l.definir(str);
+    l.definir(str);    
     cout << l << endl;
 }
 
@@ -83,6 +83,7 @@ int main() {
             else
                 cout << " != L";
             cout << l1.get_id() << endl; 
+            break;            
 
         case 8: {
             inicializar(l1);

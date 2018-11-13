@@ -27,7 +27,7 @@ Cuando un usuario ejecute la calculadora para lenguajes regulares, el programa d
 8. Potencia
 9. Cierre de Kleene
 
->>> Introduzca una opción: 
+``>>> Introduzca una opción: ``
 
 ## Especificación de lenguajes: enumeración de cadenas
 
