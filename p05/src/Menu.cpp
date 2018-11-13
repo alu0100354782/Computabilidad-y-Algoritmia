@@ -24,3 +24,99 @@ void Menu::mostrar() {
 
     std::cout << ">>> Introduzca una opción:  ";
 }
+
+void Menu::operar(const int& opcion) {
+    Lenguaje l1(1), l2(2), l3(3);
+
+    switch(opcion) {
+        case 1:
+            inicializar(l1);
+            l3 = l1.inversa();
+            std::cout << "L" << l1.get_id() 
+                << "^-1 = " << l3 << std::endl;
+            break;
+
+        case 2: 
+            inicializar(l1);
+            inicializar(l2);
+            l3 = l1*l2;
+            std::cout << "L" << l1.get_id() << " * " << "L" 
+                << l2.get_id() << " = " << l3 << std::endl;                
+            break;
+
+        case 3: 
+            inicializar(l1);
+            inicializar(l2);
+            l3 = l1.lunion(l2);
+            std::cout << "L" << l1.get_id() << " U " << "L" 
+                << l2.get_id() << " = " << l3 << std::endl;                
+            break;
+
+        case 4: 
+            inicializar(l1);
+            inicializar(l2);
+            l3 = l1.interseccion(l2);
+            std::cout << "L" << l1.get_id() << " ∩ " << "L" 
+                << l2.get_id() << " = " << l3 << std::endl;                
+            break;
+
+        case 5: 
+            inicializar(l1);
+            inicializar(l2);
+            l3 = l1 - l2;
+            std::cout << "L" << l1.get_id() << " - " << "L" 
+                << l2.get_id() << " = " << l3 << std::endl;                
+            break;
+
+        case 6: 
+            inicializar(l1);
+            inicializar(l2);
+            std::cout << "L" << l2.get_id();
+            if(l1.sublenguaje(l2))
+                std::cout << " es sublenguaje de L";
+            else
+                std::cout << " NO es sublenguaje en L";
+            std::cout << l1.get_id() << std::endl; 
+            
+            break;
+        
+        case 7: 
+            inicializar(l1);
+            inicializar(l2);
+            std::cout << "L" << l2.get_id();
+            if(l1 == l2)
+                std::cout << " = L";
+            else
+                std::cout << " != L";
+            std::cout << l1.get_id() << std::endl; 
+            break;            
+
+        case 8: {
+            inicializar(l1);
+            std::cout << "introduzca exponente:";
+            int exponente = 0;
+            std::cin >> exponente;
+            l2 = l1.potencia(exponente);
+            std::cout << "L" << l1.get_id() << "^" << exponente 
+                << " = " << l2 << std::endl;                
+            break;
+        }
+        case 9: 
+            inicializar(l1);
+            l2 = l1.kleene();
+            std::cout << "L" << l1.get_id() << "* = " << l2 << std::endl;                
+            break;
+        
+        default:
+            break;
+        
+    }    
+}
+
+void Menu::inicializar(Lenguaje& l) {
+    std::cout << "L" << l.get_id() << " = ";
+    std::string str = "";
+    std::cin >> str;
+    l.definir(str);    
+    std::cout << l << std::endl;
+}
