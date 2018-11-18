@@ -6,11 +6,11 @@ OBJS = $(SRC)Bloque.o $(SRC)Fila.o $(SRC)Muro.o $(SRC)Main.o
 
 
 all:${OBJS}
-	$(CC) $(CXXFLAGS) -o p04 ${OBJS}
+	$(CC) $(CXXFLAGS) -o p04.out ${OBJS}
 	
 
 clean: 
-	rm -rf $(SRC)*.o p04
+	rm -rf $(SRC)*.o p04.out
 
 run:
-	@./p04
+	@./p04.out
