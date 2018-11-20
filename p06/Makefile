@@ -3,7 +3,7 @@ CXXFLAGS = -g -Wfatal-errors -std=c++17
 SRC = src/
 BUILD = build/
 
-OBJS = $(SRC)Menu.o $(SRC)Alfabeto.o $(SRC)Lenguaje.o $(SRC)Dfa.o $(SRC)Main.o
+OBJS = $(SRC)Alfabeto.o $(SRC)Lenguaje.o $(SRC)Estado.o $(SRC)Transicion.o $(SRC)Dfa.o $(SRC)Menu.o $(SRC)Main.o
 
 
 all:${OBJS}
