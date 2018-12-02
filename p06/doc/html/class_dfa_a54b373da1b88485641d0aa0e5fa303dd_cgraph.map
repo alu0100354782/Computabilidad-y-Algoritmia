@@ -1,0 +1,6 @@
+<map id="Dfa::read_dfa" name="Dfa::read_dfa">
+<area shape="rect" id="node2" href="$class_state.html#af336de67e76fd18020cd363f82a2172e" title="Establecer identificador del estado. " alt="" coords="188,5,275,32"/>
+<area shape="rect" id="node3" href="$class_state.html#af24ca7913f14e5e73bcead784b4f322d" title="Establecer tipo de estado. " alt="" coords="179,56,283,83"/>
+<area shape="rect" id="node4" href="$class_state.html#aae392034fc0fdf25307007548f5076d6" title="Establecer nº de transiciones. " alt="" coords="158,107,305,133"/>
+<area shape="rect" id="node5" href="$class_state.html#af93c774d8cbb27b81f2c86a0036f32d2" title="Insertar transición. " alt="" coords="155,157,308,184"/>
+</map>

@@ -1,0 +1,259 @@
+\hypertarget{class_dfa}{}\section{Dfa Class Reference}
+\label{class_dfa}\index{Dfa@{Dfa}}
+
+
+{\ttfamily \#include $<$Dfa.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dfa_a8b4306c41ff0004264f56563e4399992}{Dfa} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{class_dfa}{Dfa}\+:\+: \hyperlink{class_dfa}{Dfa} object Constructor por defecto. \end{DoxyCompactList}\item 
+\hyperlink{class_dfa_a2d110a2cc46b2dab6e6f9e901639b0cd}{$\sim$\+Dfa} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{class_dfa}{Dfa}\+:\+: \hyperlink{class_dfa}{Dfa} object Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_dfa_ae04b47677350573031c492799a1c897b}{clear} ()
+\begin{DoxyCompactList}\small\item\em Limpiar D\+FA. \end{DoxyCompactList}\item 
+bool \hyperlink{class_dfa_a54b373da1b88485641d0aa0e5fa303dd}{read\+\_\+dfa} (const string \&)
+\begin{DoxyCompactList}\small\item\em Leer D\+FA del fichero. \end{DoxyCompactList}\item 
+const set$<$ \hyperlink{class_state}{State} $>$ \& \hyperlink{class_dfa_a5f6b650f05ec3b8a5aa862c0f513c19e}{getallstates} ()
+\begin{DoxyCompactList}\small\item\em Obtener el conjunto de estados. \end{DoxyCompactList}\item 
+const set$<$ \hyperlink{class_state}{State} $>$ \hyperlink{class_dfa_a5e6cfb28034248d381e2fedb0df3d377}{get\+\_\+death\+\_\+states} () const
+\begin{DoxyCompactList}\small\item\em Obtener conjunto de estados de muerte. \end{DoxyCompactList}\item 
+bool \hyperlink{class_dfa_a0dd99d06e33e16c8fd342af4dbba3551}{check\+\_\+string} (const string \&)
+\begin{DoxyCompactList}\small\item\em Comprobar si el D\+FA genera la cadena. \end{DoxyCompactList}\item 
+const set$<$ char $>$ \hyperlink{class_dfa_a4483dc3db82de29855237b13a63c42cd}{get\+\_\+alphabet} () const
+\begin{DoxyCompactList}\small\item\em Getter del alfabeto del D\+FA. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{class_dfa_ae4bcdc6c0f5c2374f14902fd5e073c7d}{operator$<$$<$} (ostream \&os, const \hyperlink{class_dfa}{Dfa} \&dfa)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file Dfa.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dfa_a8b4306c41ff0004264f56563e4399992}\label{class_dfa_a8b4306c41ff0004264f56563e4399992}} 
+\index{Dfa@{Dfa}!Dfa@{Dfa}}
+\index{Dfa@{Dfa}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{Dfa()}{Dfa()}}
+{\footnotesize\ttfamily Dfa\+::\+Dfa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{class_dfa}{Dfa}\+:\+: \hyperlink{class_dfa}{Dfa} object Constructor por defecto. 
+
+
+
+Definition at line 9 of file Dfa.\+cpp.
+
+\mbox{\Hypertarget{class_dfa_a2d110a2cc46b2dab6e6f9e901639b0cd}\label{class_dfa_a2d110a2cc46b2dab6e6f9e901639b0cd}} 
+\index{Dfa@{Dfa}!````~Dfa@{$\sim$\+Dfa}}
+\index{````~Dfa@{$\sim$\+Dfa}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{$\sim$\+Dfa()}{~Dfa()}}
+{\footnotesize\ttfamily Dfa\+::$\sim$\+Dfa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \hyperlink{class_dfa}{Dfa}\+:\+: \hyperlink{class_dfa}{Dfa} object Destructor. 
+
+
+
+Definition at line 16 of file Dfa.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dfa_a0dd99d06e33e16c8fd342af4dbba3551}\label{class_dfa_a0dd99d06e33e16c8fd342af4dbba3551}} 
+\index{Dfa@{Dfa}!check\+\_\+string@{check\+\_\+string}}
+\index{check\+\_\+string@{check\+\_\+string}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{check\+\_\+string()}{check\_string()}}
+{\footnotesize\ttfamily bool Dfa\+::check\+\_\+string (\begin{DoxyParamCaption}\item[{const string \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Comprobar si el D\+FA genera la cadena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & cadena \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file Dfa.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_dfa_a0dd99d06e33e16c8fd342af4dbba3551_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_dfa_a0dd99d06e33e16c8fd342af4dbba3551_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_dfa_ae04b47677350573031c492799a1c897b}\label{class_dfa_ae04b47677350573031c492799a1c897b}} 
+\index{Dfa@{Dfa}!clear@{clear}}
+\index{clear@{clear}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Dfa\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Limpiar D\+FA. 
+
+
+
+Definition at line 24 of file Dfa.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_dfa_ae04b47677350573031c492799a1c897b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_dfa_a4483dc3db82de29855237b13a63c42cd}\label{class_dfa_a4483dc3db82de29855237b13a63c42cd}} 
+\index{Dfa@{Dfa}!get\+\_\+alphabet@{get\+\_\+alphabet}}
+\index{get\+\_\+alphabet@{get\+\_\+alphabet}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{get\+\_\+alphabet()}{get\_alphabet()}}
+{\footnotesize\ttfamily const set$<$ char $>$ Dfa\+::get\+\_\+alphabet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter del alfabeto del D\+FA. 
+
+\begin{DoxyReturn}{Returns}
+const set$<$char$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 164 of file Dfa.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_dfa_a4483dc3db82de29855237b13a63c42cd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_dfa_a5e6cfb28034248d381e2fedb0df3d377}\label{class_dfa_a5e6cfb28034248d381e2fedb0df3d377}} 
+\index{Dfa@{Dfa}!get\+\_\+death\+\_\+states@{get\+\_\+death\+\_\+states}}
+\index{get\+\_\+death\+\_\+states@{get\+\_\+death\+\_\+states}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{get\+\_\+death\+\_\+states()}{get\_death\_states()}}
+{\footnotesize\ttfamily const set$<$ \hyperlink{class_state}{State} $>$ Dfa\+::get\+\_\+death\+\_\+states (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtener conjunto de estados de muerte. 
+
+\begin{DoxyReturn}{Returns}
+const set$<$\+State$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file Dfa.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_dfa_a5e6cfb28034248d381e2fedb0df3d377_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_dfa_a5f6b650f05ec3b8a5aa862c0f513c19e}\label{class_dfa_a5f6b650f05ec3b8a5aa862c0f513c19e}} 
+\index{Dfa@{Dfa}!getallstates@{getallstates}}
+\index{getallstates@{getallstates}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{getallstates()}{getallstates()}}
+{\footnotesize\ttfamily const set$<$ \hyperlink{class_state}{State} $>$ \& Dfa\+::getallstates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el conjunto de estados. 
+
+\begin{DoxyReturn}{Returns}
+const set$<$\+State$>$\& 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file Dfa.\+cpp.
+
+\mbox{\Hypertarget{class_dfa_a54b373da1b88485641d0aa0e5fa303dd}\label{class_dfa_a54b373da1b88485641d0aa0e5fa303dd}} 
+\index{Dfa@{Dfa}!read\+\_\+dfa@{read\+\_\+dfa}}
+\index{read\+\_\+dfa@{read\+\_\+dfa}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{read\+\_\+dfa()}{read\_dfa()}}
+{\footnotesize\ttfamily bool Dfa\+::read\+\_\+dfa (\begin{DoxyParamCaption}\item[{const string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Leer D\+FA del fichero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & ruta del fichero \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file Dfa.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_dfa_a54b373da1b88485641d0aa0e5fa303dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_dfa_a54b373da1b88485641d0aa0e5fa303dd_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_dfa_ae4bcdc6c0f5c2374f14902fd5e073c7d}\label{class_dfa_ae4bcdc6c0f5c2374f14902fd5e073c7d}} 
+\index{Dfa@{Dfa}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{class_dfa}{Dfa} \&}]{dfa }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 234 of file Dfa.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_dfa_8hpp}{Dfa.\+hpp}\item 
+src/\hyperlink{_dfa_8cpp}{Dfa.\+cpp}\end{DoxyCompactItemize}

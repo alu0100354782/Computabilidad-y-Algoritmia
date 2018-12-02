@@ -1,17 +1,20 @@
-CC = g++ 
-CXXFLAGS = -g -Wfatal-errors -std=c++17
+CC = g++
+CXXFLAGS = -g -Wfatal-errors -std=c++11
 SRC = src/
-BUILD = build/
+BIN = bin/
 
-OBJS = $(SRC)Menu.o $(SRC)Alfabeto.o $(SRC)Lenguaje.o $(SRC)Dfa.o $(SRC)Main.o
+OBJS = $(SRC)Transition.o $(SRC)State.o $(SRC)Dfa.o $(SRC)Main.o
 
 
 all:${OBJS}
-	$(CC) $(CXXFLAGS) -o $(BUILD)p06.out ${OBJS}
-	
+	$(CC) $(CXXFLAGS) -o $(BIN)p06.out ${OBJS}
 
-clean: 
-	rm -rf $(SRC)*.o $(BUILD)p06.out
+
+clean:
+	rm -rf $(SRC)*.o $(BIN)p06.out
 
 run:
-	@$(BUILD)p06.out
+	@./$(BIN)p06.out
+
+doxy:
+	doxygen Doxyfile

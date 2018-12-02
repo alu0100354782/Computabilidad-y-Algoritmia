@@ -1,0 +1,410 @@
+\hypertarget{class_state}{}\section{State Class Reference}
+\label{class_state}\index{State@{State}}
+
+
+{\ttfamily \#include $<$State.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_state_ab91bb1dd5aa6260ab2a456581daf9ec2}{State} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{class_state}{State}\+:\+: \hyperlink{class_state}{State} object Constructor por defecto. \end{DoxyCompactList}\item 
+\hyperlink{class_state_a5ca97340266d486dfa42225f19c40de3}{State} (const \hyperlink{class_state}{State} \&)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{class_state}{State}\+:\+: \hyperlink{class_state}{State} object Constructor de copia. \end{DoxyCompactList}\item 
+\hyperlink{class_state_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\+State} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{class_state}{State}\+:\+: \hyperlink{class_state}{State} object Destructor. \end{DoxyCompactList}\item 
+const unsigned int \& \hyperlink{class_state_ac045d201c81b6ea1ff3da734c6e286a7}{getn} ()
+\begin{DoxyCompactList}\small\item\em Obtener el identificador del estado. \end{DoxyCompactList}\item 
+const unsigned int \& \hyperlink{class_state_ad701488d3ba934847dcea6222d65719e}{gettype} ()
+\begin{DoxyCompactList}\small\item\em Obtener tipo de estado, si es 1 es de aceptación. \end{DoxyCompactList}\item 
+const unsigned int \& \hyperlink{class_state_ac6d5a2e94f19b88ef932f84380420b35}{getntransitions} ()
+\begin{DoxyCompactList}\small\item\em Obtener nº de transiciones del estado. \end{DoxyCompactList}\item 
+const set$<$ \hyperlink{class_transition}{Transition} $>$ \& \hyperlink{class_state_aaafb1d7a01590d4b2ff055ca31028d65}{gettransitions} ()
+\begin{DoxyCompactList}\small\item\em Obtener el conjunto de transiciones del estado. \end{DoxyCompactList}\item 
+void \hyperlink{class_state_af336de67e76fd18020cd363f82a2172e}{setn} (unsigned int \&)
+\begin{DoxyCompactList}\small\item\em Establecer identificador del estado. \end{DoxyCompactList}\item 
+void \hyperlink{class_state_af24ca7913f14e5e73bcead784b4f322d}{settype} (unsigned int \&)
+\begin{DoxyCompactList}\small\item\em Establecer tipo de estado. \end{DoxyCompactList}\item 
+void \hyperlink{class_state_aae392034fc0fdf25307007548f5076d6}{setntransitions} (unsigned int \&)
+\begin{DoxyCompactList}\small\item\em Establecer nº de transiciones. \end{DoxyCompactList}\item 
+void \hyperlink{class_state_af93c774d8cbb27b81f2c86a0036f32d2}{inserttransitions} (\hyperlink{class_transition}{Transition} \&)
+\begin{DoxyCompactList}\small\item\em Insertar transición. \end{DoxyCompactList}\item 
+bool \hyperlink{class_state_ab13a676e36927c127c62dba45ad7b635}{deadstate} ()
+\begin{DoxyCompactList}\small\item\em Comprobar si es un estado de muerte. \end{DoxyCompactList}\item 
+\hyperlink{class_state}{State} \& \hyperlink{class_state_a520af8c9479e6832b07612907b2c8108}{operator=} (const \hyperlink{class_state}{State} \&)
+\item 
+int \hyperlink{class_state_a6a848174b67647a6a7a3ce467260eb7f}{operator==} (const \hyperlink{class_state}{State} \&) const
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador ==. \end{DoxyCompactList}\item 
+int \hyperlink{class_state_a7771d67d4ef98c2fd8ab7924e757781c}{operator$<$} (const \hyperlink{class_state}{State} \&) const
+\begin{DoxyCompactList}\small\item\em Sobrecargar del operador $<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{class_state_a9e1d00045023572e9e6dc0d0a199e49a}{operator$<$$<$} (ostream \&, const \hyperlink{class_state}{State} \&)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador de salida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file State.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_state_ab91bb1dd5aa6260ab2a456581daf9ec2}\label{class_state_ab91bb1dd5aa6260ab2a456581daf9ec2}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\texorpdfstring{State()}{State()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{class_state}{State}\+:\+: \hyperlink{class_state}{State} object Constructor por defecto. 
+
+
+
+Definition at line 8 of file State.\+cpp.
+
+\mbox{\Hypertarget{class_state_a5ca97340266d486dfa42225f19c40de3}\label{class_state_a5ca97340266d486dfa42225f19c40de3}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\texorpdfstring{State()}{State()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}\item[{const \hyperlink{class_state}{State} \&}]{state }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{class_state}{State}\+:\+: \hyperlink{class_state}{State} object Constructor de copia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file State.\+cpp.
+
+\mbox{\Hypertarget{class_state_afab438d92b90dc18d194dbd9c9c8bab3}\label{class_state_afab438d92b90dc18d194dbd9c9c8bab3}} 
+\index{State@{State}!````~State@{$\sim$\+State}}
+\index{````~State@{$\sim$\+State}!State@{State}}
+\subsubsection{\texorpdfstring{$\sim$\+State()}{~State()}}
+{\footnotesize\ttfamily State\+::$\sim$\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \hyperlink{class_state}{State}\+:\+: \hyperlink{class_state}{State} object Destructor. 
+
+
+
+Definition at line 24 of file State.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_state_ab13a676e36927c127c62dba45ad7b635}\label{class_state_ab13a676e36927c127c62dba45ad7b635}} 
+\index{State@{State}!deadstate@{deadstate}}
+\index{deadstate@{deadstate}!State@{State}}
+\subsubsection{\texorpdfstring{deadstate()}{deadstate()}}
+{\footnotesize\ttfamily bool State\+::deadstate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Comprobar si es un estado de muerte. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file State.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_state_ab13a676e36927c127c62dba45ad7b635_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_ac045d201c81b6ea1ff3da734c6e286a7}\label{class_state_ac045d201c81b6ea1ff3da734c6e286a7}} 
+\index{State@{State}!getn@{getn}}
+\index{getn@{getn}!State@{State}}
+\subsubsection{\texorpdfstring{getn()}{getn()}}
+{\footnotesize\ttfamily const unsigned int \& State\+::getn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el identificador del estado. 
+
+\begin{DoxyReturn}{Returns}
+const unsigned\& \hyperlink{class_state_ac045d201c81b6ea1ff3da734c6e286a7}{State\+::getn} 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_state_ac045d201c81b6ea1ff3da734c6e286a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_ac6d5a2e94f19b88ef932f84380420b35}\label{class_state_ac6d5a2e94f19b88ef932f84380420b35}} 
+\index{State@{State}!getntransitions@{getntransitions}}
+\index{getntransitions@{getntransitions}!State@{State}}
+\subsubsection{\texorpdfstring{getntransitions()}{getntransitions()}}
+{\footnotesize\ttfamily const unsigned int \& State\+::getntransitions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener nº de transiciones del estado. 
+
+\begin{DoxyReturn}{Returns}
+const unsigned\& \hyperlink{class_state_ac6d5a2e94f19b88ef932f84380420b35}{State\+::getntransitions} 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file State.\+cpp.
+
+\mbox{\Hypertarget{class_state_aaafb1d7a01590d4b2ff055ca31028d65}\label{class_state_aaafb1d7a01590d4b2ff055ca31028d65}} 
+\index{State@{State}!gettransitions@{gettransitions}}
+\index{gettransitions@{gettransitions}!State@{State}}
+\subsubsection{\texorpdfstring{gettransitions()}{gettransitions()}}
+{\footnotesize\ttfamily const set$<$ \hyperlink{class_transition}{Transition} $>$ \& State\+::gettransitions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el conjunto de transiciones del estado. 
+
+\begin{DoxyReturn}{Returns}
+const set$<$\+Transition$>$\& 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file State.\+cpp.
+
+\mbox{\Hypertarget{class_state_ad701488d3ba934847dcea6222d65719e}\label{class_state_ad701488d3ba934847dcea6222d65719e}} 
+\index{State@{State}!gettype@{gettype}}
+\index{gettype@{gettype}!State@{State}}
+\subsubsection{\texorpdfstring{gettype()}{gettype()}}
+{\footnotesize\ttfamily const unsigned int \& State\+::gettype (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener tipo de estado, si es 1 es de aceptación. 
+
+\begin{DoxyReturn}{Returns}
+const unsigned\& \hyperlink{class_state_ad701488d3ba934847dcea6222d65719e}{State\+::gettype} 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_ad701488d3ba934847dcea6222d65719e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_af93c774d8cbb27b81f2c86a0036f32d2}\label{class_state_af93c774d8cbb27b81f2c86a0036f32d2}} 
+\index{State@{State}!inserttransitions@{inserttransitions}}
+\index{inserttransitions@{inserttransitions}!State@{State}}
+\subsubsection{\texorpdfstring{inserttransitions()}{inserttransitions()}}
+{\footnotesize\ttfamily void State\+::inserttransitions (\begin{DoxyParamCaption}\item[{\hyperlink{class_transition}{Transition} \&}]{t }\end{DoxyParamCaption})}
+
+
+
+Insertar transición. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & transición \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 97 of file State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_af93c774d8cbb27b81f2c86a0036f32d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_a7771d67d4ef98c2fd8ab7924e757781c}\label{class_state_a7771d67d4ef98c2fd8ab7924e757781c}} 
+\index{State@{State}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!State@{State}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily int State\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{class_state}{State} \&}]{state }\end{DoxyParamCaption}) const}
+
+
+
+Sobrecargar del operador $<$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 153 of file State.\+cpp.
+
+\mbox{\Hypertarget{class_state_a520af8c9479e6832b07612907b2c8108}\label{class_state_a520af8c9479e6832b07612907b2c8108}} 
+\index{State@{State}!operator=@{operator=}}
+\index{operator=@{operator=}!State@{State}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{class_state}{State} \& State\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_state}{State} \&}]{state }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file State.\+cpp.
+
+\mbox{\Hypertarget{class_state_a6a848174b67647a6a7a3ce467260eb7f}\label{class_state_a6a848174b67647a6a7a3ce467260eb7f}} 
+\index{State@{State}!operator==@{operator==}}
+\index{operator==@{operator==}!State@{State}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily int State\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_state}{State} \&}]{state }\end{DoxyParamCaption}) const}
+
+
+
+Sobrecarga del operador ==. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 140 of file State.\+cpp.
+
+\mbox{\Hypertarget{class_state_af336de67e76fd18020cd363f82a2172e}\label{class_state_af336de67e76fd18020cd363f82a2172e}} 
+\index{State@{State}!setn@{setn}}
+\index{setn@{setn}!State@{State}}
+\subsubsection{\texorpdfstring{setn()}{setn()}}
+{\footnotesize\ttfamily void State\+::setn (\begin{DoxyParamCaption}\item[{unsigned int \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Establecer identificador del estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_state_af336de67e76fd18020cd363f82a2172e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_aae392034fc0fdf25307007548f5076d6}\label{class_state_aae392034fc0fdf25307007548f5076d6}} 
+\index{State@{State}!setntransitions@{setntransitions}}
+\index{setntransitions@{setntransitions}!State@{State}}
+\subsubsection{\texorpdfstring{setntransitions()}{setntransitions()}}
+{\footnotesize\ttfamily void State\+::setntransitions (\begin{DoxyParamCaption}\item[{unsigned int \&}]{ntransitions }\end{DoxyParamCaption})}
+
+
+
+Establecer nº de transiciones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & nº de transiciones \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 88 of file State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_aae392034fc0fdf25307007548f5076d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_af24ca7913f14e5e73bcead784b4f322d}\label{class_state_af24ca7913f14e5e73bcead784b4f322d}} 
+\index{State@{State}!settype@{settype}}
+\index{settype@{settype}!State@{State}}
+\subsubsection{\texorpdfstring{settype()}{settype()}}
+{\footnotesize\ttfamily void State\+::settype (\begin{DoxyParamCaption}\item[{unsigned int \&}]{type }\end{DoxyParamCaption})}
+
+
+
+Establecer tipo de estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & 1 aceptación, 0 no aceptación \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_state_af24ca7913f14e5e73bcead784b4f322d_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_state_a9e1d00045023572e9e6dc0d0a199e49a}\label{class_state_a9e1d00045023572e9e6dc0d0a199e49a}} 
+\index{State@{State}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!State@{State}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{class_state}{State} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador de salida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & cadena resultante \\
+\hline
+{\em state} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream\& 
+\end{DoxyReturn}
+
+
+Definition at line 167 of file State.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_state_8hpp}{State.\+hpp}\item 
+src/\hyperlink{_state_8cpp}{State.\+cpp}\end{DoxyCompactItemize}
