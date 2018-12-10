@@ -19,3 +19,6 @@ run:
 
 doxy:
 	doxygen $(DOX)
+
+open_doc:
+	firefox doc/html/index.html &

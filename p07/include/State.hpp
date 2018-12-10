@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vector>
+#include <set>
 #include "Transition.hpp"
 
 using namespace std;
@@ -15,7 +15,7 @@ class State {
         unsigned int id_;               // id de estado
         unsigned int type_;             // 1 aceptación, 0 no aceptación
         unsigned int ntransitions_;     // nº de transiciones
-        vector<Transition> transitions_;   // transiciones
+        set<Transition> transitions_;   // transiciones
 
     public:
         State();                // constructor por defecto
@@ -27,7 +27,7 @@ class State {
         const unsigned int& gettype() ;
         const unsigned int& getntransitions();
 
-        const vector<Transition>& gettransitions();
+        const set<Transition>& gettransitions();
         void setid(unsigned int &);
         void settype(unsigned int &);
         void setntransitions(unsigned int &);

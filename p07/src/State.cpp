@@ -56,9 +56,9 @@ const unsigned int& State::getntransitions() {
 /**
  * @brief Obtener el conjunto de transiciones del estado
  *
- * @return const vector<Transition>& conjunto de transiciones
+ * @return const set<Transition>& conjunto de transiciones
  */
-const vector<Transition>& State::gettransitions() {
+const set<Transition>& State::gettransitions() {
     return this->transitions_;
 }
 
@@ -95,7 +95,7 @@ void State::setntransitions(unsigned int &ntransitions) {
  * @param t transición
  */
 void State::inserttransitions(Transition &t) {
-    this->transitions_.push_back(t);
+    this->transitions_.insert(t);
 }
 
 /**
@@ -113,7 +113,7 @@ bool State::deadstate() {
 
     for(int i = 0; i < this->transitions_.size(); i++) {
 
-        vector<Transition>::iterator it = transitions_.begin();
+        set<Transition>::iterator it = transitions_.begin();
         advance(it, i);
         Transition x = *it;
 

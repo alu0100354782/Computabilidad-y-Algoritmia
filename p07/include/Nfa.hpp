@@ -18,11 +18,10 @@ class Nfa {
 
 	private:
 		unsigned int nstates_;	// número de estados
-		set<State> q_;			// colección de estados
+		set<State> q_;			// conjunto de estados
 		unsigned int s_;		// estado inicial
-		State current_;       	// estado actual
-		// set<char> alphabet_;	// alfabeto
-		Alphabet alphabet_;
+		State current_;       	// estado actual		
+		Alphabet alphabet_;		// alfabeto
 
 	public:
 		Nfa();				// constructor por defecto
@@ -37,6 +36,12 @@ class Nfa {
 		bool check_string(const string&);         		// comprobar cadena
 		const Alphabet get_alphabet() const;			// obtener alfabeto del NFA
 		bool is_dfa() const;							// comprobar si es DFA
+		const set<State> epsilon_closure();	// epsilon clausura del estado actual
+
+		/*Implementar función transitar para usar recursivamente
+
+			transitar(string cadena, int indice, State estado_actual)
+		*/
 
 	//sobrecarga de la salida
 	friend ostream& operator << (ostream& os, const Nfa& nfa);

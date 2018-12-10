@@ -195,6 +195,11 @@ const Alphabet Nfa::get_alphabet() const {
   return alphabet_;
 }
 
+/*Implementar función transitar para usar recursivamente
+
+    transitar(string cadena, int indice, State estado_actual)
+*/
+
 /**
  * @brief Comprobar si el NFA reconoce la cadena
  *
@@ -203,7 +208,6 @@ const Alphabet Nfa::get_alphabet() const {
  * @return false no reconoce la cadena
  */
 bool Nfa::check_string(const string& str) {
-
     int i=0;
     istringstream iss(str);
     char token;
@@ -215,43 +219,36 @@ bool Nfa::check_string(const string& str) {
 
         current_ = next_state;//estado actual
 
-        for(auto q: q_) { //recorrer estados
+        for(State q: epsilon_closure()) { //recorrer estados            
 
-            if (q == current_) {
+            for(Transition t: q.gettransitions()) { //recorrer transiciones
 
-                for(auto t: q.gettransitions()) { //recorrer transiciones
+                if(token == t.getsymbol()) {
 
-                    if(token == t.getsymbol()) {
-
-                        for(auto q: q_) { //recorrer estados para obtener estado siguiente
-                            if (q.getid() == t.gettoState())
-                                next_state = q;
-                        }
-
-
-                        cout << q.getid() << "\t\t" << t.getsymbol();
-
-                        cout << "\t\t" << t.gettoState() << endl;
-
-                        i++;
-
-                        //break;
+                    for(State q2: q_) { //recorrer estados para obtener estado siguiente
+                        if (q2.getid() == t.gettoState())
+                            next_state = q2;
                     }
-                }
 
-                token = iss.peek();
+                    cout << q.getid() << "\t\t" << t.getsymbol();
+                    cout << "\t\t" << t.gettoState() << endl;
 
-                if (token = EOF) {
-                    break;
                 }
             }
+
+            token = iss.peek();
+
+            if (token = EOF) {
+                break;
+            }
+           i++; 
         }
     }
 
     cout << endl;
     current_ = next_state;
-
-    if (i == str.length() && current_.gettype() == 1){
+    
+    if (i == str.length() && current_.gettype() == 1){    
         cout << "Cadena de entrada ACEPTADA" << endl;
         return true;
     }
@@ -275,6 +272,29 @@ bool Nfa::is_dfa() const {
     }
 
     return true;
+}
+
+/**
+ * @brief Obtener conjunto de estados que se alcanzan con 
+ * epsilon transiciones desde estado actual
+ * 
+ * @return const set<State> Conjunto de estados
+ */
+const set<State> Nfa::epsilon_closure() {
+    set<State> e_closure;
+    for (Transition t: current_.gettransitions()) {        
+        if(t.is_epsilon()) {
+            for (State s: q_) {
+                if(s.getid() == t.gettoState())
+                    e_closure.insert(s);    
+            }            
+        }            
+    }
+    for(State s: e_closure){
+        std::cout << s << std::endl;
+    }
+    
+    return e_closure;
 }
 
 /**

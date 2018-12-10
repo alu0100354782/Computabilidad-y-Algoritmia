@@ -72,6 +72,35 @@ void Transition::settoState(int& toState) {
 }
 
 /**
+ * @brief Ver si la transición ha sido usada o no
+ * 
+ * @return true 
+ * @return false 
+ */
+const bool& Transition::getvisited() {
+    return visited_;
+}
+
+/**
+ * @brief establece si la transición ha sido usada o no
+ * 
+ * @param visited true o false
+ */
+void Transition::setvisited(bool visited) {
+    visited_ = visited;
+}
+
+/**
+ * @brief Comprobar si es epsilon transición
+ * 
+ * @return true 
+ * @return false 
+ */
+bool Transition::is_epsilon() const {
+    return (symbol_ == '~');
+}
+
+/**
  * @brief Sobrecarga del operador =
  *
  * @param t Transición a asignar
@@ -90,10 +119,7 @@ Transition& Transition::operator=(const Transition &t) {
  * @return int 1 son iguales, 0 son distintas
  */
 int Transition::operator==(const Transition &t) const {
-  if( this->symbol_ != t.symbol_)
-    return 0;
-
-  if( this->toState_ != t.toState_)
+  if( symbol_ != t.symbol_ && toState_ != t.toState_)
     return 0;
 
   return 1;
@@ -103,7 +129,7 @@ int Transition::operator==(const Transition &t) const {
  * @brief Sobrecarga del operador <
  *
  * @param t Transición a comparar con la actual
- * @return int 1 es menor o igual, 0 es mayor
+ * @return int 1 es menor, 0 es mayor
  */
 int Transition::operator<(const Transition &t) const {
   if( this->symbol_ == t.symbol_ && this->toState_ < t.toState_)
