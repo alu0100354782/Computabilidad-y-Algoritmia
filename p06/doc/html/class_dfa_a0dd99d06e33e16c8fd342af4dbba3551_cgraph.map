@@ -1,4 +1,0 @@
-<map id="Dfa::check_string" name="Dfa::check_string">
-<area shape="rect" id="node2" href="$class_state.html#ac045d201c81b6ea1ff3da734c6e286a7" title="Obtener el identificador del estado. " alt="" coords="187,5,274,32"/>
-<area shape="rect" id="node3" href="$class_state.html#ad701488d3ba934847dcea6222d65719e" title="Obtener tipo de estado, si es 1 es de aceptación. " alt="" coords="179,56,283,83"/>
-</map>
