@@ -97,8 +97,10 @@ void Grammar::to_file(string filename) {
     file << nt_.size() << endl;
 
     //linea 4 lista de todos los símbolos no terminales
-    for(auto s: nt_) {
-        file << s << " ";
+    file << labels_[0] << " ";
+    for(char nt: nt_) {
+        if (nt != labels_[0])
+            file << nt << " ";
     }
     file << endl;
 
@@ -129,9 +131,11 @@ ostream& operator << (ostream& os, const Grammar& g) {
     // linea 3 nº total de símbolos no terminales
     os << g.nt_.size() << endl;
     
-    //linea 4 lista de todos los símbolos no terminales
-    for(auto nt: g.nt_) {
-        os << nt << " ";
+    //linea 4 lista de todos los símbolos no terminales    
+    os << g.labels_[0] << " ";
+    for(char nt: g.nt_) {
+        if (nt != g.labels_[0])
+            os << nt << " ";
     }
     os << endl;
 
