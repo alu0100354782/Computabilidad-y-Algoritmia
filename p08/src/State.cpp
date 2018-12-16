@@ -63,6 +63,20 @@ const set<Transition>& State::gettransitions() {
 }
 
 /**
+ * @brief Obtener siguiente estado transitando con un símbolo dado
+ * 
+ * @return const unsigned& State::next símbolo con que se transita
+ */
+const unsigned int& State::next(const char& symbol) {
+    
+    for(Transition t: transitions_) {
+        if(t.getsymbol() == symbol)
+            return t.gettostate();
+    }
+    
+}
+
+/**
  * @brief Establecer identificador del estado
  * 
  * @param int 

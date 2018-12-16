@@ -22,6 +22,7 @@ class State {
         const unsigned int& gettype() ;
         const unsigned int& getntransitions();
         const set<Transition>& gettransitions();
+        const unsigned int& next(const char&);
 
         void setid(unsigned int&);
         void settype(unsigned int&);

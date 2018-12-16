@@ -18,6 +18,15 @@ Dfa::~Dfa() {
 }
 
 /**
+ * @brief Obtener el estado inicial del DFA
+ * 
+ * @return const unsigned int& estado inicial
+ */
+const unsigned int& Dfa::get_s() {
+    return s_;
+}
+
+/**
  * @brief Limpiar DFA
  * 
  */
@@ -132,6 +141,29 @@ bool Dfa::read_dfa(const string& path) {
 }
 
 /**
+ * @brief Guardar DFA en nuevo fichero
+ * 
+ * @param filename nombre de fichero
+ */
+void Dfa::save_dfa(const string& filename) {
+    
+    ofstream file(filename); 
+
+    file << q_.size() << endl;
+    file << s_ << endl;
+   
+    for(State state: q_) {
+        file << state.getid() << " " << state.gettype() << " " << state.gettransitions().size();
+
+        for(Transition t: state.gettransitions()) {
+            file << " " << t.getsymbol() << " " << t.gettostate();
+        }
+        file << endl;
+    }
+   file.close();
+}
+
+/**
  * @brief Obtener el conjunto de estados
  * 
  * @return const set<State>& 
@@ -153,8 +185,6 @@ const set<State> Dfa::get_death_states(){
 
         if (x.deadstate())
             ds.insert(x);
-            //cout << x.getn() << " ";
-
     }
 
     return ds;
@@ -233,6 +263,156 @@ bool Dfa::check_string(const string& str) {
         cout << "Cadena de entrada NO ACEPTADA" << endl;
         return false;
     }
+}
+
+/**
+ * @brief Minimizar DFA
+ * 
+ */
+void Dfa::minimize() {
+    set<set<State>> Pi;
+    set<set<State>> PiB;
+    set<State> aceptation_states;
+    set<State> normal_states;
+
+    int n_states = 1;
+
+    for(State state: q_) {
+        if(state.gettype() == 1) {
+            aceptation_states.insert(state);
+        }
+        else
+            normal_states.insert(state);
+    }
+
+    Pi.insert(aceptation_states);
+    Pi.insert(normal_states);
+
+    cout << "P0:{";
+    for(set<State> set_states: Pi) {
+        cout << "{";
+        for (State s: set_states) {
+            cout << s.getid() << ", ";
+        }
+        cout << "} ";
+    }
+    cout << "}" << endl;
+
+    while(Pi != PiB) {
+        PiB = Pi;
+        Pi = new_partition(PiB, n_states);
+    }
+
+    n_states = 0;
+
+    for(set<State> set_states: Pi) 
+        n_states++;
+    
+    cout << endl << "Nº de estados DFA mínimo: " << n_states << endl;
+}
+
+/**
+ * @brief Crea una nueva partición de estados
+ * 
+ * @param Pi 
+ * @param n_states 
+ * @return const set<set<State>> 
+ */
+const set<set<State>> Dfa::new_partition(set<set<State>>& Pi, int& n_states){
+    set<set<State>> set_set_states; 
+    set<set<State>> PiNew ;    
+    
+    for(set<State> states: Pi) {
+        set_set_states = factorize(states,Pi,n_states);
+        PiNew.insert(set_set_states.begin(), set_set_states.end());
+    }    
+    
+    return PiNew;
+}
+
+/**
+ * @brief Junta los estados equivalentes
+ * 
+ * @param states 
+ * @param Pi 
+ * @param n_states 
+ * @return const set<set<State>> 
+ */
+const set<set<State>> Dfa::factorize(set<State>& states, set<set<State>>& Pi, int& n_states) {
+    set<set<State>> set_set_states;
+    set_set_states.insert(states);
+    
+    for(char symbol: alphabet_.getsymbols()) {
+        set<set<State>> aux;
+
+        for(set<State> ss: set_set_states) {
+            aux = split(ss, symbol, Pi);            
+        }
+        set_set_states = aux;
+        print_set_states(set_set_states, n_states, symbol, states, Pi);
+    }
+    return set_set_states;
+}
+
+/**
+ * @brief Separa estados no equivalentes
+ * 
+ * @param G 
+ * @param symbol 
+ * @param Pi 
+ * @return const set<set<State>> 
+ */
+const set<set<State>> Dfa::split(set<State>& G, char& symbol, set<set<State>>& Pi) {
+    set<set<State>> T;
+    for(set<State> H: Pi) {
+        set<State> state;
+
+        for(State sG: G) {
+            
+            for(State sH: H) {
+                
+                if(sG.next(symbol) == sH.getid())
+                    state.insert(sG);
+            }
+        }
+        if(!state.empty())
+            T.insert(state);
+    }
+
+    return T;
+}
+
+/**
+ * @brief Muestra los conjuntos de estados del algoritmo minimización de estados
+ * 
+ * @param partition 
+ * @param n_states 
+ * @param symbol 
+ * @param G 
+ * @param Pi 
+ */
+void Dfa::print_set_states(set<set<State>>& partition, int& n_states, char& symbol, set<State>& G, set<set<State>>& Pi) {
+    cout << "Con el símbolo '" << symbol << "':" << endl;
+    cout << "P"<< n_states << ":{";
+
+    for(set<State> ss: partition) {
+        cout << "{";
+        for(State s: ss) {
+            cout<< s.getid() << ",";
+        }
+        cout << "} ";
+    }
+
+    for(set<State> ss: Pi) {
+        if(ss != G) {
+            cout << "{";
+            for(State s: ss) {
+                cout << s.getid() << ",";
+            }
+            cout << "}";
+        }
+    }
+    cout << "}" << endl;
 }
 
 ostream& operator << (ostream& os, const Dfa& dfa) {

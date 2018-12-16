@@ -1,14 +1,12 @@
-/*****************************************************************
-
-                    SERGIO REYES DE LEÓN
-
-CyA | Práctica #08: Minimización de estados DFA
-
-*****************************************************************/
-
 #include "../include/Dfa.hpp"
 
-
+/**
+ * @brief Función principal
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int main(int argc, char *argv[]) {
 
     Dfa dfa;
@@ -19,6 +17,15 @@ int main(int argc, char *argv[]) {
     string str;
 
     do {
+      cout << "  ******************************************************************" << endl;
+      cout << "  |                                                                |" << endl;
+      cout << "  | COMPUTABILIDAD Y ALGORITMIA                                    |" << endl;
+      cout << "  |                                                                |" << endl;
+      cout << "  | Sergio Reyes de León                                           |" << endl;
+      cout << "  |                                                                |" << endl;
+      cout << "  | Práctica #08: Minimización de autómatas finitos deterministas  |" << endl;
+      cout << "  |                                                                |" << endl;
+		  cout << "  ******************************************************************" << endl << endl;
       cout << "\t[1] Leer DFA" << endl;
       cout << "\t[2] Mostrar DFA" << endl;
       cout << "\t[3] Identificar estados de muerte" << endl;
@@ -79,8 +86,22 @@ int main(int argc, char *argv[]) {
 
             break;
           case 5:
+            dfa.minimize();
+            cout << dfa << endl;
             break;
           case 6:
+            string strFile = "";
+            cout << "Nombre en el que se guardará el DFA: ";
+            cin >> strFile;
+            system("clear");
+            
+            if(strFile.length() > 4) {
+              strFile = "dfas/"+strFile;
+              dfa.save_dfa(strFile);
+              cout << "DFA guardado!" << endl;
+            }
+            else
+              cout << "Nombre de fichero no válido" << endl;
             break;
 
       }//end switch
